@@ -1,0 +1,96 @@
+@mixin Button{
+    max-width: 343px;
+    margin-top: 30px;
+    padding: 8px 20px;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 12px;
+}
+
+.Settings{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    max-width: 343px;
+    margin: auto;
+    overflow: hidden;
+    padding-bottom: 84px;
+    .MainTitle{
+        margin-top: 32px;
+        margin-left: 44px;
+        color: var(--color-5);
+    }
+    .Caption{
+        color: var(--color-2);
+        text-transform: uppercase;
+    }
+    .InfoWrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; 
+        .Title{
+            color: var(--color-5)
+        }
+        .Caption{
+            color: var(--color-2);
+            text-transform: uppercase;
+        }
+        .Caption+.Title{
+            margin-top: 24px;
+        }
+        .Title + .Caption{
+            text-transform: initial;
+        }
+    }
+    .UserWrapper{
+        margin-top: 33px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        .Photo{
+            margin-right: 16px;
+            min-width: 80px;
+            min-height: 80px;
+            border-radius: 50%;
+            background-color: var(--color-2);
+        }
+    }
+    .ButtonUpdate{
+        @include Button();
+        color:var(--color-7);
+        border-color: var(--color-7);
+        &:active{
+            background-color: var(--color-7);
+            color: var(--color-5);
+        }
+    }
+    .ButtonExit{
+        @include Button();
+        color: var(--color-6);
+        border-color: var(--color-6);
+        &:active{
+            background-color: var(--color-6);
+            color: car(--color-5);
+        }
+    }
+    .ThemeButton{
+        margin-top: 24px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        .Icon{
+            margin-right: 16px;
+            min-width: 36px;
+            height: 36px;
+            mask-repeat: no-repeat;
+            mask-position: center;
+            mask-size: contain;
+            mask-image: url('../../Icons/ThemeIcon.svg');
+            background-color: var(--color-5);
+        }
+    }
+}

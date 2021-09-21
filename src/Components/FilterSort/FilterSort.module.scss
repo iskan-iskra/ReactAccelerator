@@ -1,0 +1,58 @@
+.SortWrapper{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .caption{
+        color: var(--color-2);
+        text-transform: uppercase;
+    }
+    .SortType{
+        margin-top: 24px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        .title{
+            color: var(--color-5);
+            margin-right: auto;
+        }
+        .Button{
+            min-width: 34px;
+            height: 34px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform .2s linear;
+            &:active{
+                transform: scale(1.6);
+            }
+            .FromAtoZ, .FromZtoA{
+                min-width: 24px;
+                height: 24px;
+                mask-repeat: no-repeat;
+                mask-size: cover;
+                mask-position: center;
+                background-color: var(--color-2);
+                transition: background-color .2s linear;
+                &.active{
+                    background-color: var(--color-7);
+                }
+               
+            }
+            .FromAtoZ{
+                mask-image: url('../../Icons/FilterButtonAlfabet.svg');
+                transform: scale(1, -1);
+            }
+            .FromZtoA{
+                mask-image: url('../../Icons/FilterButtonAlfabet.svg');
+                
+            }
+        }
+        .Button+.Button{
+            margin-left: 24px;
+        }
+    }
+}

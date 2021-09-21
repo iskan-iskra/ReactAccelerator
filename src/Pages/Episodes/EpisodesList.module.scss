@@ -1,0 +1,15 @@
+.EpisodesListContainer{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    .EpisodesList{
+        max-width: 500px;
+        align-self: center;
+        margin-top: 26px;
+        padding-bottom: 65px;
+        display: grid;
+        grid-column-gap: 16px;
+        grid-row-gap: 24px;
+        align-items: center;
+    }
+}

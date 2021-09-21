@@ -1,0 +1,78 @@
+.Find{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color-1);
+    color: var(--color-2);
+    border-radius: 100px;
+    box-sizing: content-box;
+    label{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: auto;
+        padding: 12px 15px;
+        min-width: 100px;
+        input{
+            width: auto;
+            margin-left: 10px;
+            outline: none;
+            border: none;
+            background:none;
+            color: var(--color-5);
+            &::placeholder{
+                color: var(--color-2);
+            }
+        }
+        .icon{
+            min-width: 24px;
+            min-height: 24px;
+            mask-size: 100%;
+            mask-position: center;
+            mask-repeat: no-repeat;
+            mask-image: url('../../Icons/Search.svg');
+            background-color: var(--color-2);
+        }
+    }
+    .FilterButtonWrapper{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-right: 15px;
+        .VrLine{
+            height: 24px;
+            width: 0;
+            border-left: 1px solid var(--color-2);
+        }
+        .FilterButton{
+            margin-left: 10px;
+            min-width: 24px;
+            min-height: 24px;
+            mask-size: 100%;
+            mask-position: center;
+            mask-repeat: no-repeat;
+            mask-image: url('../../Icons/Filter\,\ Sort.3.svg');
+            background-color: var(--color-2);
+        }
+    }
+}
+.FindButton{
+    display: block;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    visibility:hidden;
+    opacity: 0;
+    width: 50px;
+    height: 50px;
+    transition: .5s;
+    background-color: var(--color-2);
+    mask-image: url('../../Icons/Search.svg');
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+    z-index: 1000000000;
+    &.active{
+        visibility:visible;
+        opacity: 1;
+    }
+}

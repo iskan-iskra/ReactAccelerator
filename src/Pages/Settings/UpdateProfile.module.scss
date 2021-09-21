@@ -1,0 +1,51 @@
+.UpdateProfile{
+    display: flex;
+    flex-direction: column;
+    max-width: 343px;
+    min-height: calc(100*var(--vh,1vh));
+    margin: auto;
+    overflow: hidden;
+    .TitleWrapper{
+        margin-top: 32px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .MainTitle{
+            margin-left: 20px;
+            color: var(--color-5);
+        }
+    }
+    .UserPhotoWrapper{
+        margin-top: 41px;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .UserPhoto{
+            min-width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: var(--color-2);
+        }
+        .ButtonChangePhoto{
+            margin-top: 20px;
+            color: var(--color-7);
+        }
+    }
+    .InfoWrapper{
+        margin-top: 40px;
+        padding: 0 12px;
+        display: flex;
+        flex-direction: column;
+        .Caption{
+            color: var(--color-2);
+        }
+    }
+    .ButtonsWrapper{
+        margin-top: auto;
+        padding: 0 12px;
+        padding-bottom: 22px;
+        display: flex;
+        flex-direction: column;
+    }
+}

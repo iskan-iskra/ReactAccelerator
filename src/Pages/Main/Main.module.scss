@@ -1,0 +1,81 @@
+.Main{
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+    &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-size:contain;
+        background-repeat: repeat;
+        background-image: url('../../Icons/image\ 1.png');
+        animation: backgroundFlash 4s linear infinite;
+    }
+    .Title{
+        z-index: 100;
+        margin-left: calc(.05*53*var(--vh,1vh));
+        position: relative;
+        height: calc(53*var(--vh,1vh));
+        width: calc(.71*53*var(--vh,1vh));
+        overflow: hidden;
+        &::before{
+            content: '';
+            z-index: 1;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('../../Icons/MainTitle.png');
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            mask-image: url('../../Icons/MainTitle.png');
+            mask-size: 100%;
+            mask-position: center;
+            mask-repeat: no-repeat;
+            background-color: var(--color-3);
+            animation: titleFlash 2s linear infinite;
+        }
+    }
+    .Logo{
+        z-index: 1000;
+        position: relative;
+        height: calc(47*var(--vh,1vh) - 60px);
+        width: calc(1.28*(47*var(--vh,1vh) - 60px));
+        background-size: 90%;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-image: url('../../Icons/MainLogo.png');
+    }
+}
+
+@keyframes titleFlash{
+    0%{transform: scale(1)};
+    50%{transform: scale(1.05)};
+    100%{transform: scale(1)};
+}
+
+@keyframes backgroundFlash{
+    0%{transform: scale(1)};
+    50%{transform: scale(1.2)};
+    100%{transform: scale(1)};
+}

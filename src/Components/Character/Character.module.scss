@@ -1,0 +1,55 @@
+.Character{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &.column{
+        flex-direction:row;
+        padding-right: 40px;
+    }
+    &.wrap{
+        flex-direction:column;
+    }
+}
+.Photo{
+    border-radius: 50%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../../Icons/user.svg");
+    position: relative;
+    overflow: hidden;
+    &.column{
+        min-width: 74px;
+        min-height: 74px;
+    }
+    &.wrap{
+        min-width: 120px;
+        min-height: 120px;
+    }
+}
+img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.Info{
+    display: flex;
+    flex-direction: column;
+    &.column{
+        align-items:flex-start;
+        margin-left: 18px;
+    }
+    &.wrap{
+        margin-top: 18px;
+        align-items: center;
+        text-align: center;
+    }
+}
+.Name{
+    color: var(--color-5);
+}
+.Type{
+    color: var(--color-2);
+}

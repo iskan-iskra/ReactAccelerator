@@ -1,0 +1,45 @@
+@mixin img{
+    margin-top: 200px;
+    width: 300px;
+    height: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+
+
+
+.Container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    z-index: -1;
+    .Title{
+        margin: 0 auto;
+        margin-top: 28px;
+        color: var(--color-2);
+        text-align: center;
+        width: 216px;
+    }
+    .imageCharacterNull{
+        @include img;
+        background-image: url('../../Icons/CharacterNull.png')
+    }
+    .imageLocationNull{
+        @include img;
+        background-image: url('../../Icons/LocationNull.png')
+    }
+    .imageEpisodeNull{
+        @include img;
+        background-image: url('../../Icons/EpisodeNull.png')
+    }
+    .imageFilterNull{
+        @include img;
+        background-image: url('../../Icons/FilterNull.png');
+    }
+}

@@ -1,0 +1,196 @@
+@mixin Button{
+    background-color: var(--color-5);
+    min-width: 24px;
+    height: 24px;
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    mask-position: center;
+    position: absolute;
+}
+@mixin icon{
+    min-width: 24px;
+    height: 24px;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 100%;
+    background-color: var(--color-2);
+    transition: background-color .2s linear;
+}
+
+.ButtonForward{
+    @include Button;
+    top: calc(50% - 12px);
+    right: 0;
+    mask-image: url('../../Icons/ButtonForward.svg');
+}
+.Caption{
+    color: var(--color-2);
+}
+.HrLine{
+    width: calc(100vw - 2px);
+    align-self: center;
+    border: 1px solid var(--color-1);
+    margin: 36px -16px;
+    &.withMargin{
+        width: calc(100vw - 2px - 16px - 16px);
+    }
+}
+.AmountViewer{
+    color: var(--color-2);
+    padding: 24px 0;
+    text-transform: uppercase;
+}
+.ButtonBackWrapper{
+    left: 16px;
+    top: 32px;
+    z-index: 1000000000;
+    position: absolute;
+    min-width: 24px;
+    height: 24px;
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 50%;
+    border: 1px solid white;
+    .ButtonBack{
+        @include Button;
+        mask-image: url('../../Icons/ButtonBack.svg');
+        z-index: 100;
+        background-color: white;
+    }
+}
+.CharacterStatus{
+    text-transform: uppercase;
+    color: var(--color-3);
+    &.Dead{
+        color: var(--color-6)
+    }
+    &.textCentre{
+        text-align: center;
+    }
+}
+.LocationTitle{
+    .Name{
+        color: var(--color-5);
+    }
+    .InfoWrapper{
+        display: flex;
+        flex-direction: row;
+        color: var(--color-2);
+        div+div{
+            display: flex;
+            flex-direction: row;
+            &::before{
+                position: relative;
+                display: block;
+                content: '•';
+                padding: 0 5px;
+            }
+        }
+    }
+}
+.ButtonPlayVideo{
+    background-image: url('../../Icons/PlayVideo.svg');
+    background-size: 33%;
+    background-position-x:55%;
+    background-position-y:center;
+    background-repeat: no-repeat;
+    background-color: var(--color-7);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.CheckboxWrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .Checkbox{
+        min-width: 24px;
+        height: 24px;
+        mask-repeat: no-repeat;
+        mask-size: 100%;
+        mask-image: url('../../Icons/Checkbox.svg');
+        background-color: var(--color-2);
+        transition: background-color .5s linear;
+        &.Checked{
+            mask-image: url('../../Icons/CheckboxChecked.svg');
+            background-color: var(--color-7);
+
+        }
+    }
+    .title{
+        margin-left: 16px;
+        color: var(--color-5);
+    }
+}
+.InputWrapper{
+    width: 100%;
+    .Title{
+        color: var(--color-5);
+    }
+    .Label{
+        margin-top: 8px;
+        background-color: var(--color-1);
+        padding: 12px 16px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: flex-end;
+        .Input{
+            border:none;
+            background:none;
+            outline:none;
+            padding:0;
+            color: var(--color-5);
+            width: 62%;
+            &::placeholder{
+                color: var(--color-2);
+            }
+            &:focus + div{
+                background-color: var(--color-5)
+            }
+        }
+        .LoginIcon{
+            @include icon;
+            mask-image: url('../../Icons/LoginIcon.svg');
+            margin-right: 20px;
+        }
+        .PasswordIcon{
+            @include icon;
+            mask-image: url('../../Icons/PasswordIcon.svg');
+            margin-right: 20px;
+        }
+        .PasswordEYE{
+            @include icon;
+            mask-image: url('../../Icons/PasswordiconEYE.svg');
+            margin-left: auto;
+            &.active{
+                background-color: var(--color-5);
+            }
+        }
+        &.Error{
+            box-shadow: 0 0 5px 2px var(--color-6) inset;
+        }
+    }
+}
+.InputWrapper + .InputWrapper{
+    margin-top: 10px;
+}
+.ButtonSubmit{
+    margin-top: 24px;
+    padding: 12px 0;
+    text-align: center;
+    color: var(--color-5);
+    background-color: var(--color-7);
+    border-radius: 12px;
+    width: 100%;
+}
+.ButtonBack2{
+    min-width: 24px;
+    height: 24px;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-image: url('../../Icons/ButtonBack.svg');
+    mask-size: contain;
+    background-color: var(--color-5);
+}

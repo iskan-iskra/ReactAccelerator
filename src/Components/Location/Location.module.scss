@@ -1,0 +1,29 @@
+.Location{
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw - 32px);
+    max-width: 500px;
+    height: calc(.64*(100vw - 32px));
+    max-height: calc(.64*500px);
+    border-radius: 20px;
+    overflow: hidden;
+    &+.Location{
+        margin-top: 24px;
+    }
+    img{
+        display: block;
+        position: relative;
+        width: 100%;
+        height: calc(.44*(100vw - 32px));
+        max-height: calc(.44*500px);
+    }
+    .LocationTitleWrapper{
+        background-color: var(--color-1);
+        height: calc(.2*(100vw - 32px));
+        max-height: calc(.2*500px);
+        padding: 0 16px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}

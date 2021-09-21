@@ -1,0 +1,39 @@
+
+
+// STYLE FOR CHARACTERSLIST
+
+.CharacterList{
+    padding-bottom: 65px;
+    display: grid;
+    grid-column-gap: 16px;
+    grid-row-gap: 24px;
+    align-items: center;
+    transition: grid-template-columns 1s;
+    &.wrap{
+        grid-template-columns: repeat(2, 1fr);
+        align-items:flex-start;
+    }
+    &.column{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+.InfoWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .ViewButton{
+        min-width: 24px;
+        min-height: 24px;
+        margin-right: 14px;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        background-color: var(--color-2);
+        &.wrap{
+            mask-image: url('../../Icons/Grid\,\ Layout.7.svg');
+        }
+        &.column{
+            mask-image: url('../../Icons/Bullet\,\ List\,\ Text.1.svg');
+        }
+    }
+}
+

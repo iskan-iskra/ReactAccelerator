@@ -1,0 +1,12 @@
+@import "./Fonts/font_roboto.css";
+body{
+    margin: 0;
+    background-color: var(--color-4);
+    padding: 0 16px; 
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+}
+input{
+    padding: 0;
+    outline: none;
+}

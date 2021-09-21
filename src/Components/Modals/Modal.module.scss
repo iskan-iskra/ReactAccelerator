@@ -1,0 +1,118 @@
+.Modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 1000000000;
+    &.Active{
+        transition: opacity .2s 0s;
+        pointer-events: all;
+        opacity: 1;
+        div{
+            opacity: 1;
+            transform: scale(1);
+            transition: transform .2s .2s, opacity .2s .2s;
+        }
+    }
+
+}
+.ModalAuthorizationError{
+    transform: scale(.2);
+    opacity: 0;
+    transition: transform .2s 0s, opacity .2s 0s;
+    pointer-events:all;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 12px;
+    background-color: var(--color-1);
+    .Title{
+        color: var(--color-5);
+    }
+    .Message{
+        margin-top: 20px;
+        color: var(--color-5);
+    }
+    .ButtonOk{
+        margin-top: 24px;
+        padding: 8px;
+        text-align: center;
+        color: var(--color-7);
+        border: 1px solid var(--color-7);
+        border-radius: 12px;
+    }
+}
+
+.ModalThemeSwitcher{
+    transform: scale(.2);
+    opacity: 0;
+    transition: transform .2s 0s, opacity .2s 0s;
+    pointer-events: all;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: var(--color-1);
+    .Title{
+        color: var(--color-5);
+    }
+    .Buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        .Accept, .Cancel{
+            color: var(--color-5);
+        }
+        .Accept{
+            margin-right: auto;
+        }
+    }
+    .Selectors{
+        margin: 24px 0;
+        display: flex;
+        flex-direction: column;
+        .Selector{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .SelectIcon{
+                min-width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                border: 2px solid var(--color-7);
+                position: relative;
+            }
+            .SelectTitle{
+                margin-left: 16px;
+                color: var(--color-5);
+            }
+            &.ActiveTheme{
+                .SelectIcon{
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        right: calc(50% - 5px);
+                        top: calc(50% - 5px);
+                        min-width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background-color: var(--color-7);
+                    }
+                }
+            }
+        }
+        .Selector+.Selector{
+            margin-top: 24px;
+        }
+        
+    }
+}

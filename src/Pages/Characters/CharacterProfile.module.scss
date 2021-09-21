@@ -1,0 +1,127 @@
+.CharacterProfile{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 500px;
+    overflow: hidden;
+}
+
+.BackgroundPhoto{
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 218px;
+    overflow: hidden;
+    z-index: -1;
+    background-image: url("../../Icons/Rectangle\ 6.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    .Shadow{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: 
+            linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, 
+            rgba(11, 30, 45, 0) 37.29%, 
+            rgba(11, 30, 45, 0) 68.93%), 
+            rgba(11, 30, 45, 0.65);
+        z-index: 100;
+    }
+    img{
+        position: absolute;
+        left: -5vw;
+        top: -20vw;
+        width:110vw;
+        height:110vw;
+        filter: blur(8px);
+    }
+}
+.Profile{
+    color: blue;
+    display: flex;
+    flex-direction: column;
+    z-index: 10000;
+    max-width: 500px;
+    align-self: center;
+    .Photo{
+        // отнимаем от высоты заблюренной карнитнки половину 
+        // высоты фото и половину ширины обводки
+        margin-top: calc(218px - 146px/2 - 8px/2);
+        margin-bottom: 16px;
+        border-radius: 50%;
+        border: 8px solid var(--color-4);
+        width: 146px;
+        height: 146px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+        background-image: url('../../Icons/user.svg');
+        align-self: center;
+        overflow: hidden;
+        position: relative;
+        img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .Name{
+        color: var(--color-5);
+        text-align: center;
+    }
+    .Status{
+        margin-top: 4px;
+        color: var(--color-3);
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .Info{
+        margin-top: 36px;
+        color: var(--color-5);
+    }
+    .Wrapper{
+        margin-top: 24px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .Gender, .Race{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            color: var(--color-5);
+        }
+    }
+    .BirthPlace, .Location{
+        color: var(--color-5);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    .BirthPlace+.Location{
+        margin-top: 24px;
+    }
+}
+.EpisodesWrapper{
+    display: grid;
+    grid-column-gap: 16px;
+    grid-row-gap: 24px;
+    padding-bottom: 24px;
+    .TitleWrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        .Title{
+            color: var(--color-5);
+        }
+        .Link{
+            color: var(--color-2);
+        }
+    }
+}

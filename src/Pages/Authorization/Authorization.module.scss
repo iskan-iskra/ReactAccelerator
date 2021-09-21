@@ -1,0 +1,88 @@
+@mixin icon{
+    min-width: 24px;
+    height: 24px;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 100%;
+    background-color: var(--color-2);
+    transition: background-color .2s linear;
+}
+
+
+.Authorization{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: calc(100vw - 32px);
+    .MainLogo{
+        position: relative;
+        margin-top: 64px;
+        // 286px - высота элементов регистрации
+        // 64px - верзний отступ логотипа
+        // 8.12vh - отступ между логотипом и элементами регстрации
+        // 0.116 и 0.712 коэффициенты пропорциональности 
+        // относительно высоты логотипа
+        margin-left: calc(.0116 * (100*var(--vh,1vh) - 64px - 286px - 8.12*var(--vh,1vh)));
+        width: calc(.712 * (100*var(--vh,1vh)  - 64px - 286px - 8.12*var(--vh,1vh)));
+        height: calc(100*var(--vh,1vh) - 64px - 286px - 8.12*var(--vh,1vh));
+        overflow: hidden;
+        &::before{
+            content: '';
+            z-index: 1;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('../../Icons/AuthorizationBG.png');
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            mask-image: url('../../Icons/AuthorizationBG.png');
+            mask-size: 100%;
+            mask-position: center;
+            mask-repeat: no-repeat;
+            background-color: var(--color-3);
+            animation: titleFlash 2s linear infinite;
+        }
+    }
+    .Form{
+        margin-top: calc(4.68*var(--vh,1vh));
+        width: 85vw;
+        max-width: 319px;
+    }
+    .Registration{
+        margin-top: 24px;
+        padding-bottom: 28px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .Caption{
+            color: var(--color-2);
+        }
+        .Link{
+            margin-left: 10px;
+            color: var(--color-3);
+        }
+    }
+}
+
+
+
+
+
+@keyframes titleFlash{
+    0%{transform: scale(1)};
+    50%{transform: scale(1.05)};
+    100%{transform: scale(1)};
+}
